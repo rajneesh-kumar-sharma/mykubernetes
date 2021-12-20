@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: dev-server
+spec:
+  containers:
+          - image: nginx
+            name: dev-server
+  nodeSelector:
+          node: "node-1"
+

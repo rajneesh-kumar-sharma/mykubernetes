@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: a1
+spec:
+   containers:
+      - name: con1
+        image: nginx
+        args: 
+         ["sleep","3600"]
+      - name: con2
+        image: nginx 

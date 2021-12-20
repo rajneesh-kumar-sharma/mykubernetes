@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rajneesh
+spec:
+  replicas: 4
+  selector:
+   matchLabels:
+    app: dev
+  template:
+    metadata:
+     labels:
+       app: dev
+       environment: dev
+    spec:
+       containers:
+       - name: raj
+         image: nginx
+         ports:
+         - containerPort: 80

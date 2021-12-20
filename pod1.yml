@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+      name: pod-server
+spec:
+      containers:
+             - image: nginx
+               name: pod-server
+      nodeSelector:
+              "node":     "master"
+

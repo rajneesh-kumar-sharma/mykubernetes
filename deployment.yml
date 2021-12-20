@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deployment
+  labels: 
+    app: web-server
+spec:
+  replicas: 4
+  strategy:
+          #Recreate:
+           # maxSurge: 3
+           #maxUnavailable: 0
+   type: Recreate 
+  selector:
+   matchLabels:
+    app: web-server
+  template:
+    metadata:
+      labels:
+        app: web-server
+    spec: 
+      containers:
+       - name: nginx
+         image: nginx:1.13.1
+         ports:
+         - containerPort: 80
+
